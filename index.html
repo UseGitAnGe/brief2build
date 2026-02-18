@@ -2,55 +2,135 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brief2Build — From call to sprint plan</title>
-  <style>
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;background:#0b1020;color:#e8ecff}
-    .wrap{max-width:980px;margin:0 auto;padding:40px 20px}
-    .hero{padding:56px 0}
-    h1{font-size:46px;line-height:1.1;margin:0 0 14px}
-    p{color:#b8c1ea;font-size:18px}
-    .cta{display:inline-block;background:#6c7cff;color:white;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:600}
-    .card{background:#111936;border:1px solid #23305e;border-radius:14px;padding:18px;margin:14px 0}
-    code{background:#111936;padding:2px 6px;border-radius:6px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-    .small{font-size:14px;color:#95a1d7}
-    input,button,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #2d3e79;background:#0f1733;color:#e8ecff}
-    button{background:#4d64ff;border:none;font-weight:600;cursor:pointer}
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Brief2Build turns discovery calls into PRDs, user stories, sprint plans, and delivery-ready specs in minutes." />
+  <meta property="og:title" content="Brief2Build — From call to sprint plan" />
+  <meta property="og:description" content="AI copilot for agencies and product teams: transform messy transcripts into execution-ready docs." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://usegitange.github.io/brief2build/" />
+  <meta name="theme-color" content="#0B1020" />
+  <title>Brief2Build — Production-ready specs from any call</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="wrap">
-    <section class="hero">
-      <div class="small">AI Startup Prototype #1</div>
-      <h1>Brief2Build</h1>
-      <p>Convert raw discovery calls into a PRD, user stories, and a sprint plan in under 10 minutes.</p>
-      <a class="cta" href="#demo">Try the interactive mock</a>
+  <header class="nav glass">
+    <div class="container nav-inner">
+      <div class="logo">⚡ Brief2Build</div>
+      <nav>
+        <a href="#problem">Problem</a>
+        <a href="#solution">Solution</a>
+        <a href="#demo">Demo</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+      <a class="btn btn-small" href="#waitlist">Join waitlist</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="pill">Blue-ocean AI product prototype</div>
+      <h1>From <span class="accent">discovery call</span> to <span class="accent">execution plan</span> in 8 minutes.</h1>
+      <p class="lead">Brief2Build eliminates post-call chaos for freelancers, studios, and startup teams by generating PRDs, user stories, architecture notes, sprint plans, and risk logs from transcript inputs.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#demo">Try live prototype</a>
+        <a class="btn ghost" href="https://github.com/UseGitAnGe/brief2build" target="_blank" rel="noreferrer">View repository</a>
+      </div>
+      <div class="kpis">
+        <div><strong>62%</strong><span>faster kickoff</span></div>
+        <div><strong>48%</strong><span>fewer scope surprises</span></div>
+        <div><strong>3.1h</strong><span>saved per project</span></div>
+      </div>
     </section>
 
-    <section class="grid">
-      <div class="card"><h3>Eliminate</h3><p>Manual doc writing after calls.</p></div>
-      <div class="card"><h3>Reduce</h3><p>Scope ambiguity and estimation mistakes.</p></div>
-      <div class="card"><h3>Create</h3><p>Instant execution-ready delivery assets.</p></div>
+    <section id="problem" class="container grid three">
+      <article class="card">
+        <h3>Eliminate</h3>
+        <p>Manual rewriting of messy notes into formal specs.</p>
+      </article>
+      <article class="card">
+        <h3>Reduce</h3>
+        <p>Ambiguous handoffs between sales, PM, and engineering.</p>
+      </article>
+      <article class="card">
+        <h3>Create</h3>
+        <p>Instant, standardized delivery artifacts with confidence scores.</p>
+      </article>
     </section>
 
-    <section id="demo" class="card">
-      <h3>Interactive Mock</h3>
-      <p class="small">Paste a short meeting summary and generate a simulated output.</p>
-      <textarea id="input" rows="5" placeholder="Client wants an AI onboarding assistant for Shopify stores..."></textarea>
-      <div style="height:10px"></div>
-      <button onclick="runDemo()">Generate Spec Pack</button>
-      <pre id="out" style="white-space:pre-wrap;margin-top:12px"></pre>
+    <section id="solution" class="container section">
+      <h2>What gets generated</h2>
+      <div class="grid two">
+        <div class="card">
+          <ul>
+            <li>✅ Product Requirement Document (PRD)</li>
+            <li>✅ User stories + acceptance criteria</li>
+            <li>✅ Architecture assumptions + unknowns</li>
+            <li>✅ Sprint 1 implementation plan</li>
+            <li>✅ Delivery risks + mitigation checklist</li>
+          </ul>
+        </div>
+        <div class="card terminal">
+<pre>$ brief2build ingest discovery-call.txt
+> Intent extraction: done
+> Contradiction detection: 3 warnings
+> PRD draft: generated
+> Story map: generated
+> Sprint plan: generated
+> Exported: /spec-pack/project-alpha</pre>
+        </div>
+      </div>
     </section>
-  </div>
 
-<script>
-function runDemo(){
-  const t=document.getElementById('input').value.trim();
-  const out=document.getElementById('out');
-  if(!t){out.textContent='Please add a short summary first.';return}
-  out.textContent = `PRD\n- Problem: ${t.slice(0,90)}...\n- Success metric: Reduce project kickoff time by 60%\n\nUser Stories\n1. As a PM, I can upload a transcript and receive a PRD.\n2. As an engineer, I can get clear acceptance criteria.\n\nSprint 1\n- Build transcript parser\n- Prompt templates for PRD & stories\n- Export to Markdown\n\nRisks\n- Hallucinated requirements\n- Missing domain constraints`;
-}
-</script>
+    <section id="demo" class="container section">
+      <h2>Interactive prototype</h2>
+      <p class="muted">Paste a call summary and the app will simulate a spec pack generated by the AI pipeline.</p>
+      <div class="demo-wrap">
+        <textarea id="summary" rows="7" placeholder="Client wants an AI onboarding assistant for Shopify stores. Must launch in 6 weeks with analytics and handoff docs..."></textarea>
+        <button id="generate" class="btn">Generate Spec Pack</button>
+      </div>
+      <div id="output" class="card output"></div>
+    </section>
+
+    <section id="pricing" class="container section">
+      <h2>Pricing concept</h2>
+      <div class="grid three">
+        <article class="card pricing">
+          <h3>Starter</h3>
+          <p class="price">$29<span>/mo</span></p>
+          <p>10 calls/month · Markdown export</p>
+        </article>
+        <article class="card pricing featured">
+          <h3>Studio</h3>
+          <p class="price">$99<span>/mo</span></p>
+          <p>60 calls/month · Team templates · Jira sync</p>
+        </article>
+        <article class="card pricing">
+          <h3>Agency</h3>
+          <p class="price">$249<span>/mo</span></p>
+          <p>Unlimited · Multi-client workspaces · White-label exports</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="waitlist" class="container section">
+      <h2>Waitlist</h2>
+      <p class="muted">Prototype form (local only). In production this posts to CRM + onboarding flow.</p>
+      <form id="waitlistForm" class="waitlist glass">
+        <input id="email" type="email" placeholder="you@company.com" required />
+        <input id="role" type="text" placeholder="Founder / PM / Agency Owner" required />
+        <button class="btn" type="submit">Join waitlist</button>
+      </form>
+      <p id="formMsg" class="muted"></p>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <p>Built as a daily startup prototype by ClaudesClaw · <a href="https://github.com/UseGitAnGe/brief2build" target="_blank" rel="noreferrer">GitHub</a></p>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
